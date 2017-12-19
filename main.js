@@ -4,7 +4,7 @@
 let names = ["VALERIA", "VIKA", "ANNA", "KOLYA", "EM"];
 console.log(names);
 let tempNames = [];
-let returnObj=[];
+let returnObj = [];
 let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let map = new Map();
 let revertMap = new Map();
@@ -32,24 +32,24 @@ console.log(tempNames);
 
 let customLength = tempNames.length;
 for (let a = 0; a < customLength; a++) {
-    for (let b = 0; b < customLength-a; b++) {
-        if (tempNames[b] > tempNames[b+1]) {
+    for (let b = 0; b < customLength - a; b++) {
+        if (tempNames[b] > tempNames[b + 1]) {
             let temptemp = tempNames[b];
-            tempNames[b] = tempNames[b+1];
-            tempNames[b+1] = temptemp;
+            tempNames[b] = tempNames[b + 1];
+            tempNames[b + 1] = temptemp;
         }
     }
 }
 console.log(tempNames);
 
-for (let i=0; i<tempNames.length;i++){
-    let newName =Number(tempNames[i]);
- //   console.log(newName);
-    let newTrueName="";
-    for(let j=0;j<newName.length;j+2){
-      //  console.log(revertMap.get(Number(newName[j]+newName[j+1])));
+for (let i = 0; i < tempNames.length; i++) {
+    let newName = tempNames[i];
+    //   console.log(newName);
+    let newTrueName = "";
+    for (let x = 0; x < newName.length; x + 2) {
+    //    console.log(revertMap.get(+newName[x] + +newName[x + 1]));
 
-        newTrueName=newTrueName+revertMap.get(10*newName[j]+newName[j+1]);
+        newTrueName = newTrueName + revertMap.get(Number((newName[x] + newName[x + 1])));
     }
     returnObj.push(newTrueName);
 }
