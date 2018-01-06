@@ -1,4 +1,3 @@
-//console.log("hello");
 'use strict'
 
 let names = ["VALERIA", "VIKA", "ANNA", "KOLYA", "EM"];
@@ -26,9 +25,6 @@ for (let k = 0; k < names.length; k++) {
     tempNames.push(tempName);
 }
 ;
-//console.log(map);
-//console.log(revertMap);
-console.log(tempNames);
 
 let customLength = tempNames.length;
 for (let a = 0; a < customLength; a++) {
@@ -40,16 +36,13 @@ for (let a = 0; a < customLength; a++) {
         }
     }
 }
-console.log(tempNames);
 
 for (let i = 0; i < tempNames.length; i++) {
     let newName = tempNames[i];
-    //   console.log(newName);
+    let res = newName.split("");
     let newTrueName = "";
-    for (let x = 0; x < newName.length; x + 2) {
-    //    console.log(revertMap.get(+newName[x] + +newName[x + 1]));
-
-        newTrueName = newTrueName + revertMap.get(Number((newName[x] + newName[x + 1])));
+    for (let x = 0; x < (newName.length); x = x + 2) {
+        newTrueName = newTrueName + revertMap.get(+((res[x] + res[x + 1])));
     }
     returnObj.push(newTrueName);
 }
